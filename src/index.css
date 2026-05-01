@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Georgia", serif;
+  
+  --color-brand-primary: #be123c; /* Rose Red */
+  --color-brand-secondary: #fdfbf7; /* Warm Off-white */
+  --color-brand-accent: #25D366; /* WhatsApp Green */
+  --color-brand-text: #2d2a26; /* Dark Brown/Grey */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-secondary text-brand-text font-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif italic;
+  }
+  
+  button, nav, span.label {
+    @apply font-sans;
+  }
+}
+
+.whatsapp-float {
+  @apply fixed bottom-8 right-8 z-50 bg-brand-accent text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform cursor-pointer;
+}
+
+.sticky-order {
+  @apply fixed bottom-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-t border-rose-100 p-4 flex justify-center md:hidden;
+}
